@@ -3,34 +3,40 @@
 
 int stack[MAX], top = -1;
 
-void push(int value) {
+void push(int value)
+{
     if (top >= MAX - 1)
         printf("Stack Overflow\n");
-    else {
+    else
+    {
         top++;
         stack[top] = value;
     }
 }
 
-void pop() {
+void pop()
+{
     if (top == -1)
         printf("Stack Underflow\n");
     else
         top--;
 }
 
-void peek() {
+void peek()
+{
     if (top == -1)
         printf("Stack is Empty\n");
     else
         printf("Top Element: %d\n", stack[top]);
 }
 
-void display() {
+void display()
+{
     int i;
     if (top == -1)
         printf("Stack is Empty\n");
-    else {
+    else
+    {
         printf("Stack Elements: ");
         for (i = top; i >= 0; i--)
             printf("%d ", stack[i]);
@@ -38,15 +44,17 @@ void display() {
     }
 }
 
-void main() {
+void main()
+{
     int choice, value;
-    
 
-    do {
+    do
+    {
         printf("\n1.Push\n2.Pop\n3.Peek\n4.Display\n5.Exit\nEnter choice: ");
         scanf("%d", &choice);
 
-        switch (choice) {
+        switch (choice)
+        {
         case 1:
             printf("Enter value to push: ");
             scanf("%d", &value);
@@ -67,5 +75,4 @@ void main() {
             printf("Invalid Choice\n");
         }
     } while (choice != 5);
-
 }

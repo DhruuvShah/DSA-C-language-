@@ -53,7 +53,7 @@ void createSampleList(struct Node **start)
 
 int main()
 {
-    struct Node * start = NULL;
+    struct Node *start = NULL;
 
     createSampleList(&start);
     printf("Original List\n");

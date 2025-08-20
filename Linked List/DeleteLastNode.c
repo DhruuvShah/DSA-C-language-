@@ -1,29 +1,34 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-struct Node{
+struct Node
+{
     int data;
     struct Node *next;
 };
 
 struct Node *start = NULL;
 
-void deleteLastNode(){
+void deleteLastNode()
+{
     struct Node *ptr, *preptr;
 
-    if(start == NULL){
+    if (start == NULL)
+    {
         printf("List is empty, nothing to delete.\n");
         return;
     }
 
     ptr = start;
-    if(ptr->next == NULL){
+    if (ptr->next == NULL)
+    {
         free(ptr);
         start = NULL;
         return;
     }
 
-    while(ptr->next != NULL){
+    while (ptr->next != NULL)
+    {
         preptr = ptr;
         ptr = ptr->next;
     }
@@ -31,38 +36,45 @@ void deleteLastNode(){
     free(ptr);
 }
 
-void insertEnd(int val){
+void insertEnd(int val)
+{
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = val;
     newNode->next = NULL;
 
-    if(start == NULL){
+    if (start == NULL)
+    {
         start = newNode;
         return;
     }
 
     struct Node *temp = start;
-    while(temp->next != NULL){
+    while (temp->next != NULL)
+    {
         temp = temp->next;
     }
     temp->next = newNode;
 }
 
-void display(){
+void display()
+{
     struct Node *temp = start;
-    if(temp == NULL){
+    if (temp == NULL)
+    {
         printf("List is empty.\n");
         return;
     }
     printf("List:\n");
-    while(temp != NULL){
+    while (temp != NULL)
+    {
         printf("%d -> ", temp->data);
         temp = temp->next;
     }
     printf("NULL\n");
 }
 
-int main(){
+int main()
+{
     insertEnd(10);
     insertEnd(20);
     insertEnd(30);

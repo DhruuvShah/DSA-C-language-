@@ -29,7 +29,8 @@ void display()
     printf("NULL\n");
 }
 
-void main(){
+void main()
+{
     insertAtBeginning(30);
     insertAtBeginning(20);
     insertAtBeginning(10);
